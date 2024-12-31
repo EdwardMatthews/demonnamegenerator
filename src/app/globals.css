@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-dark: #1a0f2e;
+  --primary-light: #2d1b4e;
+  --accent-color: #ff3d00;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-b from-[#1a0f2e] to-[#2d1b4e];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-[#ff3d00] text-white rounded-lg 
+           transform transition-all duration-300 hover:scale-105 
+           hover:shadow-lg hover:shadow-orange-500/30
+           active:scale-95 focus:outline-none focus:ring-2 
+           focus:ring-orange-500/50;
+  }
+
+  .card {
+    @apply bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 
+           shadow-lg border border-gray-700/50 
+           transition-all duration-300 hover:shadow-xl 
+           hover:border-gray-600/50;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold mb-6 text-center 
+           bg-gradient-to-r from-red-500 to-purple-600 
+           bg-clip-text text-transparent;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 发光和渐变效果 -->
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="horns-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF3D00" />
+      <stop offset="100%" style="stop-color:#9333EA" />
+    </linearGradient>
+    <radialGradient id="face-gradient" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#9333EA" />
+      <stop offset="100%" style="stop-color:#6B21A8" />
+    </radialGradient>
+  </defs>
+
+  <!-- 恶魔头部主体 - 更加细长 -->
+  <path d="
+    M 60,20
+    C 45,20 35,35 32,60
+    C 30,75 32,85 40,90
+    C 50,95 70,95 80,90
+    C 88,85 90,75 88,60
+    C 85,35 75,20 60,20
+    Z" 
+    fill="url(#face-gradient)"
+    filter="url(#glow)"
+  >
+    <animate attributeName="d" 
+      dur="3s"
+      repeatCount="indefinite"
+      values="
+        M 60,20 C 45,20 35,35 32,60 C 30,75 32,85 40,90 C 50,95 70,95 80,90 C 88,85 90,75 88,60 C 85,35 75,20 60,20;
+        M 60,22 C 45,22 35,37 32,62 C 30,77 32,87 40,92 C 50,97 70,97 80,92 C 88,87 90,77 88,62 C 85,37 75,22 60,22;
+        M 60,20 C 45,20 35,35 32,60 C 30,75 32,85 40,90 C 50,95 70,95 80,90 C 88,85 90,75 88,60 C 85,35 75,20 60,20
+      "
+    />
+  </path>
+
+  <!-- 恶魔角 - 左边，更长更尖锐 -->
+  <path d="
+    M 60,25
+    C 50,25 45,20 35,10
+    C 30,0 35,25 45,35
+    Z" 
+    fill="url(#horns-gradient)"
+    filter="url(#glow)"
+  >
+    <animate attributeName="d"
+      dur="2s"
+      repeatCount="indefinite"
+      values="
+        M 60,25 C 50,25 45,20 35,10 C 30,0 35,25 45,35;
+        M 60,27 C 50,27 45,22 35,12 C 30,2 35,27 45,37;
+        M 60,25 C 50,25 45,20 35,10 C 30,0 35,25 45,35
+      "
+    />
+  </path>
+
+  <!-- 恶魔角 - 右边，更长更尖锐 -->
+  <path d="
+    M 60,25
+    C 70,25 75,20 85,10
+    C 90,0 85,25 75,35
+    Z" 
+    fill="url(#horns-gradient)"
+    filter="url(#glow)"
+  >
+    <animate attributeName="d"
+      dur="2s"
+      repeatCount="indefinite"
+      values="
+        M 60,25 C 70,25 75,20 85,10 C 90,0 85,25 75,35;
+        M 60,27 C 70,27 75,22 85,12 C 90,2 85,27 75,37;
+        M 60,25 C 70,25 75,20 85,10 C 90,0 85,25 75,35
+      "
+    />
+  </path>
+
+  <!-- 恶魔眼睛 - 更加细长和锐利 -->
+  <g filter="url(#glow)">
+    <!-- 左眼 -->
+    <path d="
+      M 43,45
+      C 41,43 41,49 43,51
+      C 45,53 51,53 53,51
+      C 55,49 55,43 53,41
+      C 51,39 45,39 43,41
+      Z"
+      fill="#FF3D00"
+    >
+      <animate attributeName="d"
+        dur="2s"
+        repeatCount="indefinite"
+        values="
+          M 43,45 C 41,43 41,49 43,51 C 45,53 51,53 53,51 C 55,49 55,43 53,41 C 51,39 45,39 43,41;
+          M 43,46 C 41,44 41,50 43,52 C 45,54 51,54 53,52 C 55,50 55,44 53,42 C 51,40 45,40 43,42;
+          M 43,45 C 41,43 41,49 43,51 C 45,53 51,53 53,51 C 55,49 55,43 53,41 C 51,39 45,39 43,41
+        "
+      />
+    </path>
+    <!-- 右眼 -->
+    <path d="
+      M 67,45
+      C 65,43 65,49 67,51
+      C 69,53 75,53 77,51
+      C 79,49 79,43 77,41
+      C 75,39 69,39 67,41
+      Z"
+      fill="#FF3D00"
+    >
+      <animate attributeName="d"
+        dur="2s"
+        repeatCount="indefinite"
+        values="
+          M 67,45 C 65,43 65,49 67,51 C 69,53 75,53 77,51 C 79,49 79,43 77,41 C 75,39 69,39 67,41;
+          M 67,46 C 65,44 65,50 67,52 C 69,54 75,54 77,52 C 79,50 79,44 77,42 C 75,40 69,40 67,42;
+          M 67,45 C 65,43 65,49 67,51 C 69,53 75,53 77,51 C 79,49 79,43 77,41 C 75,39 69,39 67,41
+        "
+      />
+    </path>
+  </g>
+
+  <!-- 恶魔嘴 - 更加锋利 -->
+  <path d="
+    M 45,70
+    C 50,82 70,82 75,70
+    C 70,78 50,78 45,70
+    Z"
+    fill="#FF3D00"
+    filter="url(#glow)"
+  >
+    <animate attributeName="d"
+      dur="3s"
+      repeatCount="indefinite"
+      values="
+        M 45,70 C 50,82 70,82 75,70 C 70,78 50,78 45,70;
+        M 45,72 C 50,84 70,84 75,72 C 70,80 50,80 45,72;
+        M 45,70 C 50,82 70,82 75,70 C 70,78 50,78 45,70
+      "
+    />
+  </path>
+
+  <!-- 装饰纹路 - 更加锋利的线条 -->
+  <path d="
+    M 35,40
+    C 30,45 30,55 35,65
+    M 85,40
+    C 90,45 90,55 85,65
+  "
+    stroke="url(#horns-gradient)"
+    stroke-width="2"
+    fill="none"
+    opacity="0.6"
+    filter="url(#glow)"
+  >
+    <animate attributeName="opacity"
+      values="0.6;0.8;0.6"
+      dur="2s"
+      repeatCount="indefinite"
+    />
+  </path>
+</svg>
