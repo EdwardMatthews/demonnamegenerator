@@ -8,7 +8,7 @@ import GeneratorSection from '@/components/GeneratorSection'
 
 export default function Home() {
   // Generate initial names on the server
-  const initialNames = generateMultipleDemonNames(10)
+  const initialNames = generateMultipleDemonNames({ count: 10 })
   
   return (
     <main className="min-h-screen">

@@ -2,16 +2,18 @@
 
 import { useState } from 'react'
 import { generateMultipleDemonNames } from '@/lib/nameGenerator'
+import type { Gender } from '@/lib/nameGenerator'
 
 export default function GeneratorSection({ initialNames }: { initialNames: string[] }) {
   const [names, setNames] = useState(initialNames)
   const [isGenerating, setIsGenerating] = useState(false)
+  const [selectedGender, setSelectedGender] = useState<Gender>('random')
 
   const handleGenerate = () => {
     setIsGenerating(true)
     // Add a small delay to show the animation
     setTimeout(() => {
-      setNames(generateMultipleDemonNames(10))
+      setNames(generateMultipleDemonNames({ gender: selectedGender, count: 10 }))
       setIsGenerating(false)
     }, 500)
   }
@@ -20,6 +22,46 @@ export default function GeneratorSection({ initialNames }: { initialNames: strin
     <section className="py-16 px-4">
       <div className="container mx-auto max-w-4xl">
         <div className="card">
+          {/* Gender Selection */}
+          <div className="mb-8 flex justify-center gap-4">
+            <div className="inline-flex rounded-md shadow-sm" role="group">
+              <button
+                type="button"
+                onClick={() => setSelectedGender('random')}
+                className={`px-4 py-2 text-sm font-medium rounded-l-lg border
+                  ${selectedGender === 'random'
+                    ? 'bg-purple-600 text-white border-purple-600'
+                    : 'bg-gray-800 text-gray-300 border-gray-600 hover:bg-gray-700'
+                  }`}
+              >
+                Random
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelectedGender('male')}
+                className={`px-4 py-2 text-sm font-medium border-t border-b
+                  ${selectedGender === 'male'
+                    ? 'bg-purple-600 text-white border-purple-600'
+                    : 'bg-gray-800 text-gray-300 border-gray-600 hover:bg-gray-700'
+                  }`}
+              >
+                Male
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelectedGender('female')}
+                className={`px-4 py-2 text-sm font-medium rounded-r-lg border
+                  ${selectedGender === 'female'
+                    ? 'bg-purple-600 text-white border-purple-600'
+                    : 'bg-gray-800 text-gray-300 border-gray-600 hover:bg-gray-700'
+                  }`}
+              >
+                Female
+              </button>
+            </div>
+          </div>
+
+          {/* Names Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {names.map((name, index) => (
               <div
@@ -36,6 +78,7 @@ export default function GeneratorSection({ initialNames }: { initialNames: strin
             ))}
           </div>
           
+          {/* Generate Button */}
           <div className="mt-8 text-center">
             <button
               onClick={handleGenerate}
