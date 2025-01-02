@@ -1,33 +1,38 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Logo from './Logo'
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-10 h-10 relative">
-              <Image
-                src="/demon-logo.svg"
-                alt="Demon Name Generator Logo"
-                width={40}
-                height={40}
-                className="w-full h-full"
-                priority
-              />
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">
-              Demon Name Generator
-            </span>
-          </Link>
-          <div className="flex gap-6">
-            <Link href="#features" className="text-gray-300 hover:text-white transition-colors">Features</Link>
-            <Link href="#how-to-use" className="text-gray-300 hover:text-white transition-colors">How to Use</Link>
-            <Link href="#faq" className="text-gray-300 hover:text-white transition-colors">FAQ</Link>
-          </div>
+    <header className="py-6 px-4 bg-gray-900/50 backdrop-blur-sm sticky top-0 z-50">
+      <div className="container mx-auto flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <Logo className="w-10 h-10 text-purple-500" />
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">
+            Demon Name Generator
+          </h1>
         </div>
-      </nav>
+
+        <nav>
+          <ul className="flex space-x-6">
+            <li>
+              <Link href="#features" className="text-gray-300 hover:text-purple-400 transition-colors">
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link href="#how-to-use" className="text-gray-300 hover:text-purple-400 transition-colors">
+                How to Use
+              </Link>
+            </li>
+            <li>
+              <Link href="#faq" className="text-gray-300 hover:text-purple-400 transition-colors">
+                FAQ
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }
