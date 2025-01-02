@@ -82,7 +82,10 @@ function getRandomElement<T>(array: T[]): T {
 }
 
 function capitalizeFirstLetter(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  // 分割单词
+  return str.split(/[\s-']/)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
 }
 
 function generateSyllabicName(gender: 'male' | 'female'): string {
@@ -116,13 +119,13 @@ function generateCompoundName(gender: 'male' | 'female'): string {
   let name = '';
   
   if (usePrefix) {
-    name += getRandomElement(parts.prefixes) + '';
+    name += capitalizeFirstLetter(getRandomElement(parts.prefixes));
   }
   
   name += capitalizeFirstLetter(getRandomElement(parts.roots));
   
   if (useSuffix) {
-    name += getRandomElement(parts.suffixes);
+    name += capitalizeFirstLetter(getRandomElement(parts.suffixes));
   }
   
   return name;
@@ -133,18 +136,18 @@ function mutateName(name: string, gender: 'male' | 'female'): string {
   const demonPartsList = demonParts[gender];
   const mutations = [
     // 替换元音
-    (n: string) => n.replace(/[aeiou]/g, () => getRandomElement(parts.vowels)),
+    (n: string) => capitalizeFirstLetter(n.replace(/[aeiou]/g, () => getRandomElement(parts.vowels))),
     // 添加后缀
-    (n: string) => n + getRandomElement([...parts.finalConsonants, ...demonPartsList.suffixes]),
+    (n: string) => capitalizeFirstLetter(n + getRandomElement([...parts.finalConsonants, ...demonPartsList.suffixes])),
     // 添加长元音
-    (n: string) => n + getRandomElement(parts.longVowels),
+    (n: string) => capitalizeFirstLetter(n + getRandomElement(parts.longVowels)),
     // 添加中间音节
     (n: string) => {
       const mid = Math.floor(n.length / 2);
-      return n.slice(0, mid) + getRandomElement(parts.middles) + n.slice(mid);
+      return capitalizeFirstLetter(n.slice(0, mid) + getRandomElement(parts.middles) + n.slice(mid));
     },
     // 添加恶魔词根
-    (n: string) => n + getRandomElement(demonPartsList.roots)
+    (n: string) => capitalizeFirstLetter(n + ' ' + getRandomElement(demonPartsList.roots))
   ];
 
   return getRandomElement(mutations)(name.toLowerCase());

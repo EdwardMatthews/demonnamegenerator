@@ -6,6 +6,16 @@ export default function Footer() {
       description: 'Generate names for all your fantasy kingdoms'
     },
     {
+      title: 'Harry Potter Name Generator',
+      url: 'https://harrypotternamegenerator.pro/',
+      description: 'Generate names for all your fantasy kingdoms'
+    },
+    {
+      title: 'Wu Tang Name Generator',
+      url: 'https://wutangnamegenerator.pro/',
+      description: 'Generate names for all your fantasy kingdoms'
+    },
+    {
       title: 'Iframe Generator',
       url: 'https://www.iframegenerator.pro/',
       description: 'Generate responsive iframe embeds'

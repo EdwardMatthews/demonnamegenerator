@@ -9,7 +9,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div className="w-10 h-10 relative">
               <Image
-                src="/logo.svg"
+                src="/demon-logo.svg"
                 alt="Demon Name Generator Logo"
                 width={40}
                 height={40}
