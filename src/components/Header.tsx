@@ -8,9 +8,9 @@ export default function Header() {
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Logo className="w-10 h-10 text-purple-500" />
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">
+          <span className="text-2xl font-bold bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">
             Demon Name Generator
-          </h1>
+          </span>
         </div>
 
         <nav>
