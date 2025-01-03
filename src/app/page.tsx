@@ -17,7 +17,7 @@ export default function Home() {
       {/* Main content with padding for fixed header */}
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 px-4 text-center bg-[url('/images/dark-pattern.png')] bg-cover bg-center">
+        <section className="py-20 px-4 text-center bg-cover bg-center">
           <h1 className="text-5xl font-bold mb-6 animate-float bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">
             Demon Name Generator
           </h1>
