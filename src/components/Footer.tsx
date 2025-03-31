@@ -29,6 +29,11 @@ export default function Footer() {
       title: 'WebP to PDF',
       url: 'https://webptopdf.com/',
       description: 'Convert WebP images to PDF format'
+    },
+    {
+      title: 'PDF to Markdown',
+      url: 'https://pdftomarkdown.pro/',
+      description: 'Convert PDF files to Markdown format'
     }
   ]
 
