@@ -34,6 +34,31 @@ export default function Footer() {
       title: 'PDF to Markdown',
       url: 'https://pdftomarkdown.pro/',
       description: 'Convert PDF files to Markdown format'
+    },
+    {
+      title: 'HackerNews',
+      url: 'https://news.ycombinator.com/item?id=43527452',
+      description: 'What are you working on?'
+    },
+    {
+      title: 'Reddit',
+      url: 'https://www.reddit.com/r/ObsidianMD/comments/1jkmdx9/tool_to_convert_pdf_to_markdown_and_keep_all_the/',
+      description: 'Tool to convert PDF to Markdown and keep all the formatting'
+    },
+    {
+      title: 'Zhihu',
+      url: 'https://link.zhihu.com/?target=https%3A%2F%2Fpdftomarkdown.pro/',
+      description: 'Tool to convert PDF to Markdown and keep all the formatting'
+    },
+    {
+      title: 'Notion',
+      url: 'https://dramatic-tulip-5f3.notion.site/Stop-Fighting-PDFs-Convert-to-Clean-Markdown-Effortlessly-Online-1c76e599062b80789ac5cd21ff9e4cf9',
+      description: 'Tool to convert PDF to Markdown and keep all the formatting'
+    },
+    {
+      title: 'Docs',
+      url: 'https://matthewss-organization.gitbook.io/pdftomarkdown',
+      description: 'Tool to convert PDF to Markdown and keep all the formatting'
     }
   ]
 
