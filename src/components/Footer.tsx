@@ -32,7 +32,7 @@ export default function Footer() {
     },
     {
       title: 'PDF to Markdown',
-      url: 'https://pdftomarkdown.pro/',
+      url: 'https://www.google.com/url?q=https%3A%2F%2Fpdftomarkdown.pro%2F',
       description: 'Convert PDF files to Markdown format'
     },
     {
